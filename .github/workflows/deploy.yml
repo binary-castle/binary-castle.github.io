@@ -5,6 +5,9 @@ on:
     branches:
       - main # Trigger deployment on push to the main branch
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -18,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use Node.js version 18
+          node-version: 20 # Use Node.js version 18
 
       # Step 3: Install dependencies and build the project
       - name: Install dependencies
